@@ -1,11 +1,10 @@
-{% set provider= "Fastly" %}
+{% set provider = "Fastly" %}
 {% set version = "0.2.0" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
 
 {% set sha256 = "9e2b526dc96de94a5acce1e555ec3e6669194e347c88134056f28cda80c2e6bb" %}
-{% set sha256_win32 = "dc47952f69ff2fc036764d7736fa30e3427f8b517000d314090e14fbd501a682" %}
 {% set sha256_win64 = "b3cf07a7870423e414eecaf9242a732fe6de045cd3d8465f717fb723e38816c0" %}
 
 package:
@@ -17,10 +16,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz  # [not win]
   sha256: {{ sha256 }}  # [not win]
 
-  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_386.zip  # [win32]
   url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
   fn: {{ name }}-{{ version }}.zip  # [win]
-  sha256: {{ sha256_win32 }}  # [win32]
   sha256: {{ sha256_win64 }}  # [win64]
 
 build:
@@ -46,7 +43,7 @@ about:
   license: MPL 2.0
   summary: The Terraform {{ provider }} provider
   doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html
-  dev_url: https://https://github.com/terraform-providers/{{ name }}
+  dev_url: https://github.com/terraform-providers/{{ name }}
 
 extra:
   recipe-maintainers:
