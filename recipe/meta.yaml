@@ -18,15 +18,16 @@ source:
   sha256: 7fae1360a289f0104753119e8ad5ea04115d62956ffefbd5590c2c691129b986  # [win64]
 
 build:
-  number: 0
+  number: 1
   script:
     - XCOPY {{ x4_plugin }}.exe %LIBRARY_BIN%  # [win]
 
 requirements:
   build:
-    - go 1.8.*  # [not win]
     - make  # [not win]
-    - toolchain  # [not win]
+    - {{ compiler('c') }}
+  host:
+    - go 1.8.*  # [not win]
   run:
     - terraform >=0.10
 
