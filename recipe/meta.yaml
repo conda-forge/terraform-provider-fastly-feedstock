@@ -20,7 +20,7 @@ source:
     fn: {{ name }}-{{ version }}.zip  # [win]
 
 build:
-  number: 1000
+  number: 1001
   script:
     - pushd {{ pkg_src }}
     - go build -v -o $GOBIN/{{ x4_plugin }} .  # [unix]
