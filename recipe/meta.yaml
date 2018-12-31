@@ -14,10 +14,7 @@ package:
 source:
   - folder:  {{ pkg_src }}
     url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    fn: {{ name }}-{{ version }}.tar.gz  # [not win]
     sha256: 92926704bd0f2fabc05db85f6c3697f7cfc6951bad6bf37156a7c35cd169df60
-
-    fn: {{ name }}-{{ version }}.zip  # [win]
 
 build:
   number: 1001
