@@ -3,4 +3,8 @@ channel_sources:
 channel_targets:
 - conda-forge main
 go_compiler:
-- go
+- go-nocgo
+goarch:
+- amd64
+goos:
+- windows
